@@ -8,6 +8,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatInputModule} from '@angular/material/input';
+import {CarouselModule} from 'ngx-owl-carousel-o';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import {MatInputModule} from '@angular/material/input';
     MatIconModule,
     MatFormFieldModule,
     MatDividerModule,
-    MatInputModule
+    MatInputModule,
+    CarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent]

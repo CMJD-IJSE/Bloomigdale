@@ -10,6 +10,7 @@ export class AppComponent {
   title = 'Bloomingdales';
   customOptions: OwlOptions = {
     loop: true,
+    nav: true,
     mouseDrag: true,
     touchDrag: true,
     pullDrag: true,
@@ -31,6 +32,5 @@ export class AppComponent {
         items: 1
       }
     },
-    nav: true
   };
 }

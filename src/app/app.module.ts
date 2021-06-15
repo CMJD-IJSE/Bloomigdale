@@ -9,6 +9,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatInputModule} from '@angular/material/input';
 import {CarouselModule} from 'ngx-owl-carousel-o';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import {CarouselModule} from 'ngx-owl-carousel-o';
     MatFormFieldModule,
     MatDividerModule,
     MatInputModule,
-    CarouselModule
+    CarouselModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -8,16 +8,15 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 })
 export class AppComponent {
   title = 'Bloomingdales';
-  customOptions: OwlOptions = {
+  MainOwlOptions: OwlOptions = {
     loop: true,
-    nav: true,
+    nav: false,
     mouseDrag: true,
     touchDrag: true,
     pullDrag: true,
     autoplay: true,
     autoplayTimeout: 4000,
-    dots: false,
-    navText: ['', ''],
+    dots: true,
     responsive: {
       0: {
         items: 1
@@ -30,6 +29,29 @@ export class AppComponent {
       },
       940: {
         items: 1
+      }
+    },
+  };
+
+  SubOwlOptions: OwlOptions = {
+    loop: true,
+    nav: false,
+    mouseDrag: true,
+    touchDrag: true,
+    pullDrag: true,
+    dots: true,
+    responsive: {
+      0: {
+        items: 1
+      },
+      400: {
+        items: 3
+      },
+      740: {
+        items: 4
+      },
+      940: {
+        items: 6
       }
     },
   };

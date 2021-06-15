@@ -15,13 +15,12 @@
 
 .second-header{
   height: 20px;
-  border-bottom: black;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   padding: 5px 250px;
 }
-ul{
+#second-header-wrap{
   list-style: none;
   margin: 0;
   padding: 0;
@@ -32,3 +31,94 @@ ul{
     margin-right: 20px;
   }
 }
+
+.search-header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 20px 0;
+}
+
+.logo{
+  width: 285px;
+  padding: 0 0 0 250px;
+}
+
+.search-wrap{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 300px;
+  padding-right: 270px;
+}
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 85%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.main-header{
+  padding: 0 150px 0 250px;
+}
+
+#main-header-wrap{
+  list-style: none;
+  margin: 0;
+  padding: 0 0 10px 0;
+  font-size: 13px;
+  text-decoration: none;
+
+  li{
+    display: inline;
+    margin-right: 65px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: black;
+  }
+}
+
+.anchor-header{
+  text-decoration: none;
+  color: black;
+}
+
+.anchor-header:hover{
+  color: #e056fd;
+}
+
+.shipping-header{
+  height: 40px;
+  color: #44bd32;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.shipping-header-anchor{
+  color: #44bd32;
+  padding-left: 3px;
+}
+
+.page{
+  //border: 1px solid black;
+  margin: 5px 250px 0 250px;
+  height: auto;
+}
+
+.discount-img{
+  padding-top: 35px;
+  width: 100%;
+}
+
+
+
+

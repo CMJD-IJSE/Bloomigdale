@@ -12,12 +12,14 @@ import {CarouselModule} from 'ngx-owl-carousel-o';
 import {MatButtonModule} from '@angular/material/button';
 import { RecommendedCarouselComponent } from './components/recommended-carousel/recommended-carousel.component';
 import { BestGiftsCarouselComponent } from './components/best-gifts-carousel/best-gifts-carousel.component';
+import { NewArrivalCarouselComponent } from './components/new-arrival-carousel/new-arrival-carousel.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RecommendedCarouselComponent,
-    BestGiftsCarouselComponent
+    BestGiftsCarouselComponent,
+    NewArrivalCarouselComponent
   ],
   imports: [
     BrowserModule,

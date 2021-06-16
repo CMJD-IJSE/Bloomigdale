@@ -163,7 +163,7 @@
   right: 0;
 }
 
-.recommends{
+.line{
   height: 38px;
   width: 18%;
   left: 0;
@@ -179,15 +179,8 @@
   font-weight: bold;
 }
 
-.img-descriptions{
-  letter-spacing: 2px;
-}
-
-.dads-topic-div{
-  padding: 100px 0 30px 0;
-}
-
-.Dads{
-  text-align: center;
-  font-size: 60px;
+.shop-all{
+  display:flex;
+  justify-content: center;
+  color: black;
 }

@@ -10,10 +10,14 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatInputModule} from '@angular/material/input';
 import {CarouselModule} from 'ngx-owl-carousel-o';
 import {MatButtonModule} from '@angular/material/button';
+import { RecommendedCarouselComponent } from './components/recommended-carousel/recommended-carousel.component';
+import { BestGiftsCarouselComponent } from './components/best-gifts-carousel/best-gifts-carousel.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    RecommendedCarouselComponent,
+    BestGiftsCarouselComponent
   ],
   imports: [
     BrowserModule,
@@ -31,3 +35,4 @@ import {MatButtonModule} from '@angular/material/button';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+

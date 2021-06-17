@@ -10,9 +10,9 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatInputModule} from '@angular/material/input';
 import {CarouselModule} from 'ngx-owl-carousel-o';
 import {MatButtonModule} from '@angular/material/button';
-import {RecommendedCarouselComponent} from './components/recommended-carousel/recommended-carousel.component';
-import {BestGiftsCarouselComponent} from './components/best-gifts-carousel/best-gifts-carousel.component';
-import {NewArrivalCarouselComponent} from './components/new-arrival-carousel/new-arrival-carousel.component';
+import {RecommendedCarouselComponent} from './components/carousel/recommended-carousel/recommended-carousel.component';
+import {BestGiftsCarouselComponent} from './components/carousel/best-gifts-carousel/best-gifts-carousel.component';
+import {NewArrivalCarouselComponent} from './components/carousel/new-arrival-carousel/new-arrival-carousel.component';
 
 @NgModule({
   declarations: [

@@ -15,6 +15,8 @@ import {BestGiftsCarouselComponent} from './components/carousel/best-gifts-carou
 import {NewArrivalCarouselComponent} from './components/carousel/new-arrival-carousel/new-arrival-carousel.component';
 import { ItemDescriptionComponent } from './components/item-description/item-description.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
+import { HeaderComponent } from './components/share/header/header.component';
+import { FooterComponent } from './components/share/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { HomePageComponent } from './components/home-page/home-page.component';
     BestGiftsCarouselComponent,
     NewArrivalCarouselComponent,
     ItemDescriptionComponent,
-    HomePageComponent
+    HomePageComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

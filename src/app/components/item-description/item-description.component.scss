@@ -1,36 +1,66 @@
-.page{
+.page {
   display: flex;
+  justify-content: space-between;
 }
-  .images-left{
-    display: flex;
-    flex-direction: column;
-    height: 380px;
-    justify-content: space-between;
 
-    .side{
-      width: 65px;
-      height: 80px;
-      object-fit: cover;
-    }
+.images-left {
+  display: flex;
+  flex-direction: column;
+  height: 380px;
+  justify-content: space-between;
 
-    .side:hover{
-      cursor: pointer;
-      border-bottom: 2px solid black;
-    }
-
-    .first-img{
-      object-position: left;
-    }
-
-    .second-img{
-      object-position: 34%;
-    }
-
-    .third-img{
-      object-position: 65%;
-    }
-
-    .forth-img{
-      object-position: right;
-    }
+  .side {
+    width: 65px;
+    height: 80px;
+    object-fit: cover;
   }
+
+  .side:hover {
+    cursor: pointer;
+    border-bottom: 2px solid black;
+  }
+
+  .first-img {
+    object-position: left;
+  }
+
+  .second-img {
+    object-position: 34%;
+  }
+
+  .third-img {
+    object-position: 65%;
+  }
+
+  .forth-img {
+    object-position: right;
+  }
+}
+
+.description{
+  width: 500px;
+}
+.topic{
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.content{
+  padding-bottom: 40px;
+  letter-spacing: 2px;
+  font-size: 15px;
+}
+
+.price{
+  padding-top: 100px;
+}
+
+.add-button{
+  background-color: black;
+  height: 45px;
+  width: 100%;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-bottom: 55px;
+}

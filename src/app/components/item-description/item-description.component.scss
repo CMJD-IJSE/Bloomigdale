@@ -64,3 +64,38 @@
   letter-spacing: 2px;
   margin-bottom: 55px;
 }
+
+.desc{
+  margin-top: 30px;
+}
+
+.details{
+  letter-spacing: 1px;
+
+  li{
+    margin-top: 5px;
+  }
+}
+
+.last{
+  font-size: 13px;
+
+  .anchor{
+    color: black;
+  }
+  .anchor:hover{
+    color: #e056fd;
+    cursor: pointer;
+  }
+}
+
+.icons {
+  width: 150px;
+  padding: 10px 0 40px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.icon:hover {
+  cursor: pointer;
+}

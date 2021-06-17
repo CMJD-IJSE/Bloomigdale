@@ -1,0 +1,36 @@
+.page{
+  display: flex;
+}
+  .images-left{
+    display: flex;
+    flex-direction: column;
+    height: 380px;
+    justify-content: space-between;
+
+    .side{
+      width: 65px;
+      height: 80px;
+      object-fit: cover;
+    }
+
+    .side:hover{
+      cursor: pointer;
+      border-bottom: 2px solid black;
+    }
+
+    .first-img{
+      object-position: left;
+    }
+
+    .second-img{
+      object-position: 34%;
+    }
+
+    .third-img{
+      object-position: 65%;
+    }
+
+    .forth-img{
+      object-position: right;
+    }
+  }

@@ -11,6 +11,7 @@ export class BestGiftsCarouselComponent implements OnInit {
   constructor() { }
 
   SubOwlOptions: OwlOptions = {
+    margin: 40,
     loop: true,
     nav: false,
     mouseDrag: true,

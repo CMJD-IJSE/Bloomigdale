@@ -46,42 +46,8 @@
 </div>
 <div class="container">
   <mat-divider></mat-divider>
-  <img alt="img"
-       class="discount-img"
-       src="https://images.bloomingdalesassets.com/is/image/BcomMedia/media/0610_0620_HP_01_b_SALE_BMSM_INTL_only_1622146012742.jpg?scl=1&fmt=webp&wid=1440">
-  <owl-carousel-o [options]="MainOwlOptions">
-    <ng-template carouselSlide><img
-      alt="img"
-      src="https://images.bloomingdalesassets.com/is/image/BcomMedia/media/0610_0620_HP_02_a_MULTI_SpaceJam_v2_1622214644685.jpg?scl=1&fmt=webp&wid=1440"></ng-template>
-    <ng-template carouselSlide><img
-      alt="img"
-      src="https://images.bloomingdalesassets.com/is/image/BcomMedia/media/0610_0620_HP_02_d_MULTI_DesignerBreak_1622146012833.jpg?scl=1&fmt=webp&wid=1440"></ng-template>
-  </owl-carousel-o>
-  <div class="lines">
-    <div class="line">RECOMMENDED FOR YOU</div>
-  </div>
-  <app-recommended-carousel></app-recommended-carousel>
-  <img
-    alt="img"
-    src="https://images.bloomingdalesassets.com/is/image/BcomMedia/media/0603_0606_HP_03_MEN_v2FDay_TieredPricing_1621867410504.jpg?scl=1&fmt=webp&wid=1440">
-  <div class="lines">
-    <div class="line">OUR BEST GIFTS</div>
-  </div>
-  <div class="shop-all"><a href="#">SHOP ALL</a></div>
-  <app-best-gifts-carousel></app-best-gifts-carousel>
-  <img alt="img"
-       class="imgs-linked"
-       src="https://images.bloomingdalesassets.com/is/image/BcomMedia/media/0603_0606_HP_06_ESSENTIALS_v2FDay_1621867410565.jpg?scl=1&fmt=webp&wid=1440">
-  <img
-    alt="img"
-    src="https://images.bloomingdalesassets.com/is/image/BcomMedia/media/0520_0531_HP_12_HOME_lvlUp_FDay_Gifts_v2_1620420845202.jpg?scl=1&fmt=webp&wid=1440">
-  <div class="lines">
-    <div class="line">NEW ARRIVALS</div>
-  </div>
-  <app-new-arrival-carousel></app-new-arrival-carousel>
-  <img alt="img"
-       class="imgs-linked"
-       src="https://images.bloomingdalesassets.com/is/image/BcomMedia/media/1013_HP_14_NonMerch_SocialMedia_Sept2020_1601494668680.gif?scl=1&fmt=webp&wid=1440">
+
+  <router-outlet></router-outlet>
 </div>
 <mat-divider></mat-divider>
 <div class="container">
@@ -142,4 +108,3 @@
 </div>
 
 <a class="material-icons floating-btn" href="#">expand_less</a>
-<router-outlet></router-outlet>

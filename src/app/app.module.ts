@@ -13,13 +13,17 @@ import {MatButtonModule} from '@angular/material/button';
 import {RecommendedCarouselComponent} from './components/carousel/recommended-carousel/recommended-carousel.component';
 import {BestGiftsCarouselComponent} from './components/carousel/best-gifts-carousel/best-gifts-carousel.component';
 import {NewArrivalCarouselComponent} from './components/carousel/new-arrival-carousel/new-arrival-carousel.component';
+import { ItemDescriptionComponent } from './components/item-description/item-description.component';
+import { HomePageComponent } from './components/home-page/home-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RecommendedCarouselComponent,
     BestGiftsCarouselComponent,
-    NewArrivalCarouselComponent
+    NewArrivalCarouselComponent,
+    ItemDescriptionComponent,
+    HomePageComponent
   ],
   imports: [
     BrowserModule,

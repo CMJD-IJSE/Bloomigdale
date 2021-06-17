@@ -31,7 +31,7 @@ import { NewArrivalCarouselComponent } from './components/new-arrival-carousel/n
     MatDividerModule,
     MatInputModule,
     CarouselModule,
-    MatButtonModule
+    MatButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

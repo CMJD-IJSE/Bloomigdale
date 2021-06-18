@@ -26,10 +26,10 @@
     <p class="content price">LKR 127,425.80</p>
     <p class="content color"><b>COLOR: </b> Navy Blue</p>
 
-    <!--<form>
+    <form>
       <h4>mat-select</h4>
       <mat-form-field appearance="fill">
-        <mat-label>Favorite food</mat-label>
+        <mat-label>Select a size</mat-label>
         <mat-select [(ngModel)]="selectedValue" name="food">
           <mat-option *ngFor="let food of foods" [value]="food.value">
             {{food.viewValue}}
@@ -39,7 +39,7 @@
       <p> Selected food: {{selectedValue}} </p>
       <h4>native html select</h4>
       <mat-form-field appearance="fill">
-        <mat-label>Favorite car</mat-label>
+        <mat-label>Quantity</mat-label>
         <select matNativeControl [(ngModel)]="selectedCar" name="car">
           <option value="" selected></option>
           <option *ngFor="let car of cars" [value]="car.value">
@@ -48,7 +48,7 @@
         </select>
       </mat-form-field>
       <p> Selected car: {{selectedCar}} </p>
-    </form>-->
+    </form>
     <button color="primary" mat-raised-button class="add-button">ADD TO BAG</button>
     <mat-divider></mat-divider>
 

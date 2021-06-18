@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-item-description',
@@ -7,36 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ItemDescriptionComponent implements OnInit {
 
-  constructor() { }
+  selectedValue: any;
+  selectedCar: any;
 
-  ngOnInit(): void {
+  constructor() {
   }
-
-}
-/*
-
-import {Component} from '@angular/core';
-
-interface Food {
-  value: string;
-  viewValue: string;
-}
-
-interface Car {
-  value: string;
-  viewValue: string;
-}
-
-/!**
- * @title Select in a form
- *!/
-@Component({
-  selector: 'select-form-example',
-  templateUrl: 'select-form-example.html',
-})
-export class SelectFormExample {
-  selectedValue: string;
-  selectedCar: string;
 
   foods: Food[] = [
     {value: 'steak-0', viewValue: 'Steak'},
@@ -49,5 +24,18 @@ export class SelectFormExample {
     {value: 'saab', viewValue: 'Saab'},
     {value: 'mercedes', viewValue: 'Mercedes'}
   ];
+
+  ngOnInit(): void {
+  }
+
 }
-*/
+
+interface Food {
+  value: string;
+  viewValue: string;
+}
+
+interface Car {
+  value: string;
+  viewValue: string;
+}

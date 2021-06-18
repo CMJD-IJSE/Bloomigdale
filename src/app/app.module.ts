@@ -17,6 +17,8 @@ import { ItemDescriptionComponent } from './components/item-description/item-des
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { HeaderComponent } from './components/share/header/header.component';
 import { FooterComponent } from './components/share/footer/footer.component';
+import {FormsModule} from '@angular/forms';
+import {MatSelectModule} from "@angular/material/select";
 
 @NgModule({
   declarations: [
@@ -39,7 +41,9 @@ import { FooterComponent } from './components/share/footer/footer.component';
     MatDividerModule,
     MatInputModule,
     CarouselModule,
-    MatButtonModule
+    MatButtonModule,
+    FormsModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

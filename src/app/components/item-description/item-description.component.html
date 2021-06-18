@@ -21,33 +21,34 @@
   </div>
 
   <div class="description">
-    <p class="topic">Sandro</p>
+    <form>
+    <p class="topic"><b>Sandro</b></p>
+      <p id="id" class="topic">BIC001</p>
     <p class="content">Teddy Slim Fit Bomber Jacket</p>
     <p class="content price">LKR 127,425.80</p>
     <p class="content color"><b>COLOR: </b> Navy Blue</p>
 
+    </form>
     <div class="forms">
       <form>
         <mat-form-field appearance="outline" id="size-form">
           <mat-label>Select a size</mat-label>
-          <mat-select [(ngModel)]="selectedSize" name="size">
+          <mat-select [(ngModel)]="selectedSize">
             <mat-option *ngFor="let size of sizes" [value]="size.value">
               {{size.viewValue}}
             </mat-option>
           </mat-select>
         </mat-form-field>
-        <p> Selected size: {{selectedSize}} </p>
         </form>
       <form>
         <mat-form-field appearance="outline" id="qty-form">
           <mat-label>Quantity</mat-label>
-          <mat-select [(ngModel)]="selectedQuantity" name="qty">
+          <mat-select [(ngModel)]="selectedQty">
             <mat-option *ngFor="let quantity of quantities" [value]="quantity.value">
               {{quantity.viewValue}}
             </mat-option>
           </mat-select>
         </mat-form-field>
-        <p> Selected quantity: {{selectedQuantity}} </p>
       </form>
     </div>
     <button color="primary" mat-raised-button class="add-button">ADD TO BAG</button>

@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {FormControl, FormGroup} from "@angular/forms";
 
 @Component({
   selector: 'app-item-description',
@@ -7,12 +8,17 @@ import {Component, OnInit} from '@angular/core';
 })
 export class ItemDescriptionComponent implements OnInit {
 
-  selectedSize: any;
-  selectedQuantity: any;
+  itemForm: FormGroup = new FormGroup({
+    itemID: new FormControl(),
+    itemName: new FormControl(),
+    itemSize: new FormControl(),
+    itemColor: new FormControl(),
+    itemQty: new FormControl(),
+    itemPrice: new FormControl()
+  });
 
   constructor() {
   }
-
   sizes: Sizes[] = [
     {value: 'X-Small', viewValue: 'XS'},
     {value: 'Small', viewValue: 'S'},
@@ -29,6 +35,8 @@ export class ItemDescriptionComponent implements OnInit {
     {value: '4', viewValue: '4'},
     {value: '5', viewValue: '5'}
   ];
+  itemQty: any;
+  itemSize: any;
 
   ngOnInit(): void {
   }

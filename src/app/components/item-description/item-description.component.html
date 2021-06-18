@@ -26,29 +26,30 @@
     <p class="content price">LKR 127,425.80</p>
     <p class="content color"><b>COLOR: </b> Navy Blue</p>
 
-    <form>
-      <h4>mat-select</h4>
-      <mat-form-field appearance="fill">
-        <mat-label>Select a size</mat-label>
-        <mat-select [(ngModel)]="selectedValue" name="food">
-          <mat-option *ngFor="let food of foods" [value]="food.value">
-            {{food.viewValue}}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
-      <p> Selected food: {{selectedValue}} </p>
-      <h4>native html select</h4>
-      <mat-form-field appearance="fill">
-        <mat-label>Quantity</mat-label>
-        <select matNativeControl [(ngModel)]="selectedCar" name="car">
-          <option value="" selected></option>
-          <option *ngFor="let car of cars" [value]="car.value">
-            {{car.viewValue}}
-          </option>
-        </select>
-      </mat-form-field>
-      <p> Selected car: {{selectedCar}} </p>
-    </form>
+    <div class="forms">
+      <form>
+        <mat-form-field appearance="outline" id="size-form">
+          <mat-label>Select a size</mat-label>
+          <mat-select [(ngModel)]="selectedSize" name="size">
+            <mat-option *ngFor="let size of sizes" [value]="size.value">
+              {{size.viewValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <p> Selected size: {{selectedSize}} </p>
+        </form>
+      <form>
+        <mat-form-field appearance="outline" id="qty-form">
+          <mat-label>Quantity</mat-label>
+          <mat-select [(ngModel)]="selectedQuantity" name="qty">
+            <mat-option *ngFor="let quantity of quantities" [value]="quantity.value">
+              {{quantity.viewValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <p> Selected quantity: {{selectedQuantity}} </p>
+      </form>
+    </div>
     <button color="primary" mat-raised-button class="add-button">ADD TO BAG</button>
     <mat-divider></mat-divider>
 

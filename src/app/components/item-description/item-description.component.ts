@@ -7,22 +7,27 @@ import {Component, OnInit} from '@angular/core';
 })
 export class ItemDescriptionComponent implements OnInit {
 
-  selectedValue: any;
-  selectedCar: any;
+  selectedSize: any;
+  selectedQuantity: any;
 
   constructor() {
   }
 
-  foods: Food[] = [
-    {value: 'steak-0', viewValue: 'Steak'},
-    {value: 'pizza-1', viewValue: 'Pizza'},
-    {value: 'tacos-2', viewValue: 'Tacos'}
+  sizes: Sizes[] = [
+    {value: 'X-Small', viewValue: 'XS'},
+    {value: 'Small', viewValue: 'S'},
+    {value: 'Medium', viewValue: 'M'},
+    {value: 'Large', viewValue: 'L'},
+    {value: 'X-Large', viewValue: 'XL'},
+    {value: 'XX-Large', viewValue: 'XXL'}
   ];
 
-  cars: Car[] = [
-    {value: 'volvo', viewValue: 'Volvo'},
-    {value: 'saab', viewValue: 'Saab'},
-    {value: 'mercedes', viewValue: 'Mercedes'}
+  quantities: Quantities[] = [
+    {value: '1', viewValue: '1'},
+    {value: '2', viewValue: '2'},
+    {value: '3', viewValue: '3'},
+    {value: '4', viewValue: '4'},
+    {value: '5', viewValue: '5'}
   ];
 
   ngOnInit(): void {
@@ -30,12 +35,12 @@ export class ItemDescriptionComponent implements OnInit {
 
 }
 
-interface Food {
+interface Sizes {
   value: string;
   viewValue: string;
 }
 
-interface Car {
+interface Quantities {
   value: string;
   viewValue: string;
 }

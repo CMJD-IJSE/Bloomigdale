@@ -47,13 +47,13 @@
 }
 
 .content{
-  padding-bottom: 40px;
+  padding-bottom: 20px;
   letter-spacing: 2px;
   font-size: 15px;
 }
 
 .price{
-  padding-top: 100px;
+  padding-top: 50px;
 }
 
 .add-button{
@@ -139,5 +139,19 @@
   color: black;
   letter-spacing: 2px;
   font-weight: bold;
+}
+
+.forms{
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 30px;
+
+  #size-form{
+    width: 350px;
+  }
+
+  #qty-form{
+    width: 100px;
+  }
 }
 

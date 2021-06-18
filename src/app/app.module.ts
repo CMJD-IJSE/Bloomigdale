@@ -43,7 +43,8 @@ import {MatSelectModule} from '@angular/material/select';
     CarouselModule,
     MatButtonModule,
     FormsModule,
-    MatSelectModule
+    MatSelectModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

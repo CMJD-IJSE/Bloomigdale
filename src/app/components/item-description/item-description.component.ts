@@ -37,6 +37,10 @@ export class ItemDescriptionComponent implements OnInit {
   ];
   itemQty: any;
   itemSize: any;
+  selectedSize: any;
+  selectedQty: any;
+  selectedValue: any;
+  selectedCar: any;
 
   ngOnInit(): void {
   }

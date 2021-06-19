@@ -13,9 +13,6 @@ import {itemData} from '../share/ItemData';
 })
 export class ItemDescriptionComponent implements OnInit {
 
-  constructor(private itemService: ItemService, public dialog: MatDialog) {
-  }
-
   itemForm: FormGroup = new FormGroup({
     orderID: new FormControl(Math.random().toString(36).substr(2, 9)),
     itemID: new FormControl('BIC001'),
@@ -25,10 +22,7 @@ export class ItemDescriptionComponent implements OnInit {
     itemQty: new FormControl(null, Validators.required),
     itemPrice: new FormControl('127425.80')
   });
-
   itemArray: ItemDTO[] = [];
-
-
   sizes: Sizes[] = [
     {value: 'X-Small', viewValue: 'XS'},
     {value: 'Small', viewValue: 'S'},
@@ -37,7 +31,6 @@ export class ItemDescriptionComponent implements OnInit {
     {value: 'X-Large', viewValue: 'XL'},
     {value: 'XX-Large', viewValue: 'XXL'}
   ];
-
   quantities: Quantities[] = [
     {value: '1', viewValue: '1'},
     {value: '2', viewValue: '2'},
@@ -47,9 +40,13 @@ export class ItemDescriptionComponent implements OnInit {
   ];
   itemDataArray: itemData[] = [];
 
+  constructor(private itemService: ItemService, public dialog: MatDialog) {
+  }
+
   ngOnInit(): void {
     this.loadAllItems();
   }
+
   // tslint:disable-next-line:typedef
   saveItem() {
     const item = new ItemDTO(
@@ -64,7 +61,7 @@ export class ItemDescriptionComponent implements OnInit {
 
     this.itemService.saveItem(item).subscribe(resp => {
       console.log(resp);
-      if (resp.state === true){
+      if (resp.state === true) {
         this.openDialog();
       }
     }, error => {
@@ -80,6 +77,7 @@ export class ItemDescriptionComponent implements OnInit {
       console.log(error);
     });
   }
+
   openDialog(): void {
     const dialogRef = this.dialog.open(AlertUIComponent, {
       width: '70%',

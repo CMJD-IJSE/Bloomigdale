@@ -27,9 +27,22 @@ export class AlertUIComponent implements OnInit {
   itemArray: ItemDTO[] = this.data;
   dataSource = this.itemArray;
 
+  orderID = '';
+  itemID = '';
+  itemName = '';
+  itemColor = '';
+  itemSize = '';
+  itemQty = 0;
+  itemPrice = 0;
+
   updateForm: FormGroup = new FormGroup({
-    itemSize: new FormControl('', Validators.required),
-    itemQty: new FormControl('', Validators.required)
+    orderID: new FormControl(this.orderID),
+    itemID: new FormControl(this.itemID),
+    itemName: new FormControl(this.itemName),
+    itemSize: new FormControl(this.itemSize, Validators.required),
+    itemColor: new FormControl(this.itemColor),
+    itemQty: new FormControl(this.itemQty, Validators.required),
+    itemPrice: new FormControl(this.itemPrice)
   });
 
   sizes: Sizes[] = [
@@ -78,9 +91,20 @@ export class AlertUIComponent implements OnInit {
   }
 
   // tslint:disable-next-line:typedef
-  updateData() {
+  updateItem(tc: ItemDTO) {
+    this.orderID = tc.orderID;
+    this.itemID = tc.itemID;
+    this.itemSize = tc.itemSize;
+    this.itemName = tc.itemName;
+    this.itemColor = tc.itemColor;
+    this.itemQty = tc.itemQty;
+    this.itemPrice = tc.itemPrice;
   }
 
+  // tslint:disable-next-line:typedef
+  update() {
+
+  }
 }
 
 interface Sizes {

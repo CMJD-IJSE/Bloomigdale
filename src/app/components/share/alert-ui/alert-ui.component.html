@@ -1,51 +1,12 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 
-<!--<table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
-  <ng-container matColumnDef="Item ID">
-    <th mat-header-cell *matHeaderCellDef>Item ID</th>
-    <td mat-cell *matCellDef="let element">{{element.itemID}}</td>
-  </ng-container>
-
-  <ng-container matColumnDef="Name">
-    <th mat-header-cell *matHeaderCellDef>Name</th>
-    <td mat-cell *matCellDef="let element">{{element.itemName}}</td>
-  </ng-container>
-
-  <ng-container matColumnDef="Size">
-    <th mat-header-cell *matHeaderCellDef>Size</th>
-    <td mat-cell *matCellDef="let element">{{element.itemSize}}</td>
-  </ng-container>
-
-  <ng-container matColumnDef="Qty">
-    <th mat-header-cell *matHeaderCellDef>Qty</th>
-    <td mat-cell *matCellDef="let element">{{element.itemQty}}</td>
-  </ng-container>
-
-  <ng-container matColumnDef="Price">
-    <th mat-header-cell *matHeaderCellDef>Price</th>
-    <td mat-cell *matCellDef="let element">{{element.itemPrice}}</td>
-  </ng-container>
-
-  <ng-container matColumnDef="Operation">
-    <th mat-header-cell *matHeaderCellDef>Operation</th>
-    <td id="operation" mat-cell *matCellDef="let element">
-        <button mat-raised-button color="warn" (click)="removeData(); delete(element.orderID)">Remove</button>
-      &nbsp;
-      <button type="button" class="btn btn-warning" (click)="updateData()">Update</button>
-    </td>
-  </ng-container>
-
-  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-</table>-->
-
 <mat-drawer-container class="example-container">
   <mat-drawer #drawer >
-    <form [formGroup]="updateForm">
+    <form [formGroup]="updateForm" (ngSubmit)="update()">
       <mat-form-field appearance="fill">
         <mat-label>Size</mat-label>
         <mat-select formControlName="itemSize">
-          <mat-option *ngFor="let size of sizes" [value]="size.value">
+          <mat-option *ngFor="let size of sizes" [value]="itemSize">
             {{size.viewValue}}
           </mat-option>
         </mat-select>
@@ -53,11 +14,12 @@
       <mat-form-field appearance="fill">
         <mat-label>Qty</mat-label>
         <mat-select formControlName="itemQty">
-          <mat-option *ngFor="let quantity of quantities" [value]="quantity.value">
+          <mat-option *ngFor="let quantity of quantities" [value]="itemQty">
             {{quantity.viewValue}}
           </mat-option>
         </mat-select>
       </mat-form-field>
+      <button mat-flat-button color="primary" type="submit">Primary</button>
       </form>
   </mat-drawer>
   <mat-drawer-content>
@@ -92,7 +54,7 @@
         <td id="operation" mat-cell *matCellDef="let element">
           <button mat-raised-button color="warn" (click)="removeData(); delete(element.orderID)">Remove</button>
           &nbsp;
-          <button type="button" class="btn btn-warning" (click)="updateData();drawer.toggle()">Update</button>
+          <button type="button" class="btn btn-warning" (click)="drawer.toggle()">Update</button>
         </td>
       </ng-container>
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

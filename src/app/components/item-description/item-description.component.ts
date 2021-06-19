@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
+import ItemDTO from "../../dto/ItemDTO";
 
 @Component({
   selector: 'app-item-description',
@@ -41,7 +42,17 @@ export class ItemDescriptionComponent implements OnInit {
 
   // tslint:disable-next-line:typedef
   saveItem() {
-    console.log(this.itemForm);
+    const item = new ItemDTO(
+      this.itemForm.get('itemID')?.value,
+      this.itemForm.get('itemName')?.value,
+      this.itemForm.get('itemSize')?.value,
+      this.itemForm.get('itemColor')?.value,
+      Number(this.itemForm.get('itemQty')?.value),
+      Number(this.itemForm.get('itemPrice')?.value)
+    );
+
+
+
   }
 }
 

@@ -1,13 +1,13 @@
 export default class ItemDTO{
   private _itemID: string;
   private _itemName: string;
-  private _itemSize: number;
+  private _itemSize: string;
   private _itemColor: string;
   private _itemQty: number;
   private _itemPrice: number;
 
 
-  constructor(itemID: string, itemName: string, itemSize: number, itemColor: string, itemQty: number, itemPrice: number) {
+  constructor(itemID: string, itemName: string, itemSize: string, itemColor: string, itemQty: number, itemPrice: number) {
     this._itemID = itemID;
     this._itemName = itemName;
     this._itemSize = itemSize;
@@ -33,11 +33,11 @@ export default class ItemDTO{
     this._itemName = value;
   }
 
-  get itemSize(): number {
+  get itemSize(): string {
     return this._itemSize;
   }
 
-  set itemSize(value: number) {
+  set itemSize(value: string) {
     this._itemSize = value;
   }
 

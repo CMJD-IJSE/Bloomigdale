@@ -40,7 +40,26 @@
 </table>-->
 
 <mat-drawer-container class="example-container">
-  <mat-drawer #drawer >I'm a drawer</mat-drawer>
+  <mat-drawer #drawer >
+    <form [formGroup]="updateForm">
+      <mat-form-field appearance="fill">
+        <mat-label>Size</mat-label>
+        <mat-select formControlName="itemSize">
+          <mat-option *ngFor="let size of sizes" [value]="size.value">
+            {{size.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Qty</mat-label>
+        <mat-select formControlName="itemQty">
+          <mat-option *ngFor="let quantity of quantities" [value]="quantity.value">
+            {{quantity.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      </form>
+  </mat-drawer>
   <mat-drawer-content>
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
       <ng-container matColumnDef="Item ID">

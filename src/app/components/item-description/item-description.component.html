@@ -55,11 +55,13 @@
             </mat-select>
           </mat-form-field>
         </form>
-
-        <button mat-raised-button color="primary" class="show-bag" (click)="openDialog()">SHOW BAG</button>
+        <button mat-fab color="primary" class="bag-button" (click)="openDialog()">
+          <mat-icon class="bag-icon"><i class="fas fa-shopping-bag"></i></mat-icon>
+        </button>
 
       </div>
       <button class="add-button" color="primary" mat-raised-button [disabled]="itemForm.invalid" (click)="saveItem();">ADD TO BAG</button>
+
       <mat-divider></mat-divider>
 
       <p class="topic desc">PRODUCT DETAILS</p>

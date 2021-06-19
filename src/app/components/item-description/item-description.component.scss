@@ -163,11 +163,18 @@
 
   #qty-form{
     width: 100px;
-  }
-
-  .show-bag{
-    height: 50%;
-    background-color: black;
+    margin-right: 50px;
   }
 }
 
+.bag-button{
+  background-color: white;
+  margin-bottom: 20px;
+
+  .bag-icon{
+    padding-bottom: 10px;
+    color: black;
+
+  }
+
+}

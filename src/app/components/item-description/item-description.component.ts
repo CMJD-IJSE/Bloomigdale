@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormControl, FormGroup} from "@angular/forms";
+import {FormControl, FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-item-description',
@@ -9,12 +9,12 @@ import {FormControl, FormGroup} from "@angular/forms";
 export class ItemDescriptionComponent implements OnInit {
 
   itemForm: FormGroup = new FormGroup({
-    itemID: new FormControl(),
-    itemName: new FormControl(),
+    itemID: new FormControl('BIC001'),
+    itemName: new FormControl('Sandro'),
     itemSize: new FormControl(),
-    itemColor: new FormControl(),
+    itemColor: new FormControl('Navy Blue'),
     itemQty: new FormControl(),
-    itemPrice: new FormControl()
+    itemPrice: new FormControl('127425.80')
   });
 
   constructor() {
@@ -39,6 +39,10 @@ export class ItemDescriptionComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // tslint:disable-next-line:typedef
+  saveItem() {
+    console.log(this.itemForm);
+  }
 }
 
 interface Sizes {

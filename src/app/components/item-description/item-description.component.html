@@ -35,23 +35,6 @@
 
       <div class="forms">
         <form [formGroup]="itemForm">
-          <mat-form-field class="example-full-width">
-            <mat-label>Sandro</mat-label>
-            <input formControlName="itemName" matInput>
-          </mat-form-field>
-          <mat-form-field class="example-full-width">
-            <mat-label>BIC001</mat-label>
-            <input formControlName="itemID" matInput>
-          </mat-form-field>
-          <mat-form-field class="example-full-width">
-            <mat-label>Navy Blue</mat-label>
-            <input formControlName="itemColor" matInput>
-          </mat-form-field>
-          <mat-form-field class="example-full-width">
-            <mat-label>127,425.80</mat-label>
-            <input formControlName="itemPrice" matInput>
-          </mat-form-field>
-
           <mat-form-field appearance="outline" id="size-form">
             <mat-label>Size</mat-label>
             <mat-select formControlName="itemSize">
@@ -73,7 +56,7 @@
           </mat-form-field>
         </form>
       </div>
-      <button class="add-button" color="primary" mat-raised-button>ADD TO BAG</button>
+      <button class="add-button" color="primary" mat-raised-button (click)="saveItem()">ADD TO BAG</button>
       <mat-divider></mat-divider>
 
       <p class="topic desc">PRODUCT DETAILS</p>

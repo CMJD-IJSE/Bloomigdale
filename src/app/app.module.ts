@@ -20,6 +20,9 @@ import { FooterComponent } from './components/share/footer/footer.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatSelectModule} from '@angular/material/select';
 import {HttpClientModule} from '@angular/common/http';
+import { AlertUIComponent } from './components/share/alert-ui/alert-ui.component';
+import {MatTableModule} from '@angular/material/table';
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -30,7 +33,8 @@ import {HttpClientModule} from '@angular/common/http';
     ItemDescriptionComponent,
     HomePageComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    AlertUIComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +50,9 @@ import {HttpClientModule} from '@angular/common/http';
     FormsModule,
     MatSelectModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatTableModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

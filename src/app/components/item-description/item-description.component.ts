@@ -2,6 +2,9 @@ import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import ItemDTO from '../../dto/ItemDTO';
 import {ItemService} from '../../service/item.service';
+import {MatDialog} from '@angular/material/dialog';
+import {AlertUIComponent} from '../share/alert-ui/alert-ui.component';
+import {itemData} from '../share/ItemData';
 
 @Component({
   selector: 'app-item-description',
@@ -10,7 +13,7 @@ import {ItemService} from '../../service/item.service';
 })
 export class ItemDescriptionComponent implements OnInit {
 
-  constructor(private itemService: ItemService) {
+  constructor(private itemService: ItemService, public dialog: MatDialog) {
   }
 
   itemForm: FormGroup = new FormGroup({
@@ -42,8 +45,9 @@ export class ItemDescriptionComponent implements OnInit {
     {value: '5', viewValue: '5'}
   ];
 
+  itemDataArray: itemData[] = [];
+
   ngOnInit(): void {
-    this.loadAllItems();
   }
 
   // tslint:disable-next-line:typedef
@@ -61,6 +65,7 @@ export class ItemDescriptionComponent implements OnInit {
       console.log(resp);
       if (resp.state === true){
         alert('saved');
+        this.openDialog();
       }
     }, error => {
       console.log(error);
@@ -68,11 +73,23 @@ export class ItemDescriptionComponent implements OnInit {
   }
 
   // tslint:disable-next-line:typedef
-  private loadAllItems() {
+  private loadAllItems(): any {
     this.itemService.getAllItem().subscribe(resp => {
       this.itemArray = resp.dataSet;
+      this.itemDataArray = resp.dataSet;
+      return this.itemDataArray;
     }, error => {
       console.log(error);
+    });
+  }
+  openDialog(): void {
+    const dialogRef = this.dialog.open(AlertUIComponent, {
+      width: '800px',
+      data: this.loadAllItems()
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
     });
   }
 }

@@ -153,14 +153,21 @@
 .forms{
   display: flex;
   justify-content: space-between;
-  padding-bottom: 30px;
+  margin-bottom: 30px;
+  align-items: center;
+
 
   #size-form{
-    width: 350px;
+    width: 200px;
   }
 
   #qty-form{
     width: 100px;
+  }
+
+  .show-bag{
+    height: 50%;
+    background-color: black;
   }
 }
 

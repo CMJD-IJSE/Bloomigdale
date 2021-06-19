@@ -27,6 +27,7 @@ export class AlertUIComponent implements OnInit {
   // tslint:disable-next-line:typedef
   delete(id: string) {
     this.itemService.deleteItem(id).subscribe(resp => {
+      this.itemArray = this.data;
       alert(resp.message);
     }, error => {
       console.log(error);

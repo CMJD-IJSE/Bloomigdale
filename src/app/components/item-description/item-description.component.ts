@@ -17,6 +17,7 @@ export class ItemDescriptionComponent implements OnInit {
   }
 
   itemForm: FormGroup = new FormGroup({
+    orderID: new FormControl(Math.random().toString(36).substr(2, 9)),
     itemID: new FormControl('BIC001'),
     itemName: new FormControl('Sandro'),
     itemSize: new FormControl(null, Validators.required),
@@ -72,7 +73,7 @@ export class ItemDescriptionComponent implements OnInit {
   }
 
   // tslint:disable-next-line:typedef
-  private loadAllItems() {
+  public loadAllItems() {
     this.itemService.getAllItem().subscribe(resp => {
       this.itemArray = resp.dataSet;
     }, error => {

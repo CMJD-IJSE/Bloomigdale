@@ -10,6 +10,9 @@ import {ItemService} from '../../service/item.service';
 })
 export class ItemDescriptionComponent implements OnInit {
 
+  constructor(private itemService: ItemService) {
+  }
+
   itemForm: FormGroup = new FormGroup({
     itemID: new FormControl('BIC001'),
     itemName: new FormControl('Sandro'),
@@ -19,8 +22,9 @@ export class ItemDescriptionComponent implements OnInit {
     itemPrice: new FormControl('127425.80')
   });
 
-  constructor(private itemService: ItemService) {
-  }
+  itemArray: ItemDTO[] = [];
+
+
   sizes: Sizes[] = [
     {value: 'X-Small', viewValue: 'XS'},
     {value: 'Small', viewValue: 'S'},
@@ -39,6 +43,7 @@ export class ItemDescriptionComponent implements OnInit {
   ];
 
   ngOnInit(): void {
+    this.loadAllItems();
   }
 
   // tslint:disable-next-line:typedef
@@ -54,6 +59,18 @@ export class ItemDescriptionComponent implements OnInit {
 
     this.itemService.saveItem(item).subscribe(resp => {
       console.log(resp);
+      if (resp.state === true){
+        alert('saved');
+      }
+    }, error => {
+      console.log(error);
+    });
+  }
+
+  // tslint:disable-next-line:typedef
+  private loadAllItems() {
+    this.itemService.getAllItem().subscribe(resp => {
+      this.itemArray = resp.dataSet;
     }, error => {
       console.log(error);
     });

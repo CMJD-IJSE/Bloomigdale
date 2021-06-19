@@ -52,6 +52,7 @@ export class ItemDescriptionComponent implements OnInit {
   // tslint:disable-next-line:typedef
   saveItem() {
     const item = new ItemDTO(
+      this.itemForm.get('orderID')?.value,
       this.itemForm.get('itemID')?.value,
       this.itemForm.get('itemName')?.value,
       this.itemForm.get('itemSize')?.value,

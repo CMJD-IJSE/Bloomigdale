@@ -16,6 +16,7 @@ export class ItemService {
 
   public saveItem(c: ItemDTO): Observable<any>{
     return this.http.post(this.baseUrl + 'saveItem', {
+      orderID: c.orderID,
       itemID: c.itemID,
       itemName: c.itemName,
       itemSize: c.itemSize,

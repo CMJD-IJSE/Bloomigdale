@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
-import ItemDTO from "../../dto/ItemDTO";
+import ItemDTO from '../../dto/ItemDTO';
+import {ItemService} from '../../service/item.service';
 
 @Component({
   selector: 'app-item-description',
@@ -18,7 +19,7 @@ export class ItemDescriptionComponent implements OnInit {
     itemPrice: new FormControl('127425.80')
   });
 
-  constructor() {
+  constructor(private itemService: ItemService) {
   }
   sizes: Sizes[] = [
     {value: 'X-Small', viewValue: 'XS'},
@@ -51,8 +52,11 @@ export class ItemDescriptionComponent implements OnInit {
       Number(this.itemForm.get('itemPrice')?.value)
     );
 
-
-
+    this.itemService.saveItem(item).subscribe(resp => {
+      console.log(resp);
+    }, error => {
+      console.log(error);
+    });
   }
 }
 

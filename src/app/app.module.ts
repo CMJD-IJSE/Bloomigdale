@@ -19,6 +19,7 @@ import { HeaderComponent } from './components/share/header/header.component';
 import { FooterComponent } from './components/share/footer/footer.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatSelectModule} from '@angular/material/select';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,7 @@ import {MatSelectModule} from '@angular/material/select';
     FormsModule,
     MatSelectModule,
     ReactiveFormsModule,
-
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

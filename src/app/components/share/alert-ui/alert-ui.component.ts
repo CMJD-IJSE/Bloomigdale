@@ -4,6 +4,7 @@ import {itemData} from '../ItemData';
 import {ItemService} from '../../../service/item.service';
 import {MatButton} from '@angular/material/button';
 import {MatTable} from '@angular/material/table';
+import ItemDTO from '../../../dto/ItemDTO';
 
 @Component({
   selector: 'app-alert-ui',
@@ -15,15 +16,21 @@ export class AlertUIComponent implements OnInit {
 
 
   // @ts-ignore
-  @ViewChild(MatTable) table: MatTable<itemData>;
+  @ViewChild(MatTable) table: MatTable<ItemDTO>;
 
   constructor(
     private itemService: ItemService,
     public dialogRef: MatDialogRef<AlertUIComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: itemData[]) {}
+    @Inject(MAT_DIALOG_DATA) public data: ItemDTO[]) {}
 
-  itemArray: itemData[] = this.data;
+  itemArray: ItemDTO[] = this.data;
   dataSource = this.itemArray;
+
+  // tslint:disable-next-line:typedef
+  /*addData() {
+    this.dataSource.push(this.itemArray[this.itemArray.length]);
+    this.table.renderRows();
+  }*/
 
   // tslint:disable-next-line:typedef
   removeData() {
@@ -36,13 +43,12 @@ export class AlertUIComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(this.dataSource);
+    console.log(this.data);
   }
 
   // tslint:disable-next-line:typedef
   delete(id: string) {
     this.itemService.deleteItem(id).subscribe(resp => {
-      this.itemArray = this.data;
       alert(resp.message);
     }, error => {
       console.log(error);

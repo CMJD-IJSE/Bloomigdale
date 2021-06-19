@@ -62,7 +62,7 @@ export class ItemDescriptionComponent implements OnInit {
     this.itemService.saveItem(item).subscribe(resp => {
       console.log(resp);
       if (resp.state === true) {
-        this.openDialog();
+        window.location.reload();
       }
     }, error => {
       console.log(error);
@@ -84,7 +84,6 @@ export class ItemDescriptionComponent implements OnInit {
       height: '80%',
       data: this.itemArray
     });
-    console.log(this.itemDataArray);
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
     });

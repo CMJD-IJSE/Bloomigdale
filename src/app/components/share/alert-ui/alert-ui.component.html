@@ -1,57 +1,21 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 
-<!--<table class="table">
-  <thead>
-  <tr>
-    <th scope="col">#</th>
-    <th scope="col">Item Id</th>
-    <th scope="col">Item Name</th>
-    <th scope="col">Item Color</th>
-    <th scope="col">Item Size</th>
-    <th scope="col">Item Price</th>
-    <th scope="col">Qty of Items</th>
-    <th scope="col">Operate</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr *ngFor="let tempItem of itemArray; index as itemIndex">
-    <th scope="row">{{itemIndex+1}}</th>
-    <td>{{tempItem.itemID}}</td>
-    <td>{{tempItem.itemName}}</td>
-    <td>{{tempItem.itemColor}}</td>
-    <td>{{tempItem.itemSize}}</td>
-    <td>{{tempItem.itemPrice}}</td>
-    <td>{{tempItem.itemQty}}</td>
-    <td>
-      <div class="button-table">
-        <button type="button" class="btn btn-danger" (click)="delete(tempItem.orderID)">Remove</button>
-        <button type="button" class="btn btn-warning">Update</button>
-      </div>
-    </td>
-  </tr>
-  </tbody>
-</table>-->
-
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
-  <!-- Position Column -->
   <ng-container matColumnDef="Item ID">
     <th mat-header-cell *matHeaderCellDef>Item ID</th>
     <td mat-cell *matCellDef="let element">{{element.itemID}}</td>
   </ng-container>
 
-  <!-- Name Column -->
   <ng-container matColumnDef="Name">
     <th mat-header-cell *matHeaderCellDef>Name</th>
     <td mat-cell *matCellDef="let element">{{element.itemName}}</td>
   </ng-container>
 
-  <!-- Weight Column -->
   <ng-container matColumnDef="Size">
     <th mat-header-cell *matHeaderCellDef>Size</th>
     <td mat-cell *matCellDef="let element">{{element.itemSize}}</td>
   </ng-container>
 
-  <!-- Symbol Column -->
   <ng-container matColumnDef="Qty">
     <th mat-header-cell *matHeaderCellDef>Qty</th>
     <td mat-cell *matCellDef="let element">{{element.itemQty}}</td>

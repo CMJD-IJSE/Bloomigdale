@@ -13,6 +13,7 @@ export class AlertUIComponent implements OnInit {
     public dialogRef: MatDialogRef<AlertUIComponent>,
     @Inject(MAT_DIALOG_DATA) public data: itemData[]) {}
 
+  itemArray: itemData[] = this.data;
 
   onNoClick(): void {
     this.dialogRef.close();

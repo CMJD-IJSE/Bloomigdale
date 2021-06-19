@@ -44,12 +44,11 @@ export class ItemDescriptionComponent implements OnInit {
     {value: '4', viewValue: '4'},
     {value: '5', viewValue: '5'}
   ];
-
   itemDataArray: itemData[] = [];
 
   ngOnInit(): void {
+    this.loadAllItems();
   }
-
   // tslint:disable-next-line:typedef
   saveItem() {
     const item = new ItemDTO(
@@ -73,11 +72,9 @@ export class ItemDescriptionComponent implements OnInit {
   }
 
   // tslint:disable-next-line:typedef
-  private loadAllItems(): any {
+  private loadAllItems() {
     this.itemService.getAllItem().subscribe(resp => {
       this.itemArray = resp.dataSet;
-      this.itemDataArray = resp.dataSet;
-      return this.itemDataArray;
     }, error => {
       console.log(error);
     });
@@ -85,9 +82,9 @@ export class ItemDescriptionComponent implements OnInit {
   openDialog(): void {
     const dialogRef = this.dialog.open(AlertUIComponent, {
       width: '800px',
-      data: this.loadAllItems()
+      data: this.itemArray
     });
-
+    console.log(this.itemDataArray);
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
     });

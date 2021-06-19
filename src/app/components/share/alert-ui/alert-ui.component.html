@@ -2,26 +2,26 @@
   <thead>
   <tr>
     <th scope="col">#</th>
-    <th scope="col">First</th>
-    <th scope="col">Last</th>
-    <th scope="col">Handle</th>
+    <th scope="col">Item Id</th>
+    <th scope="col">Item Name</th>
+    <th scope="col">Item Color</th>
+    <th scope="col">Item Size</th>
+    <th scope="col">Item Price</th>
+    <th scope="col">Qty of Items</th>
+    <th scope="col">Operate</th>
   </tr>
   </thead>
   <tbody>
-  <tr>
-    <th scope="row">1</th>
-    <td>Mark</td>
-    <td>Otto</td>
+  <tr *ngFor="let tempItem of itemArray; index as itemIndex">
+    <th scope="row">{{itemIndex+1}}</th>
+    <td>{{tempItem.itemID}}</td>
+    <td>{{tempItem.itemName}}</td>
+    <td>{{tempItem.itemColor}}</td>
+    <td>{{tempItem.itemSize}}</td>
+    <td>{{tempItem.itemPrice}}</td>
+    <td>{{tempItem.itemQty}}</td>
     <td>
-      <button mat-button color="warn">Warn</button>
-    </td>
-  </tr>
-  <tr>
-    <th scope="row">1</th>
-    <td>Mark</td>
-    <td>Otto</td>
-    <td>
-      <button mat-button color="warn">Warn</button>
+      <button mat-button color="warn">Remove</button>
     </td>
   </tr>
   </tbody>

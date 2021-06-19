@@ -28,8 +28,10 @@
 
   <ng-container matColumnDef="Operation">
     <th mat-header-cell *matHeaderCellDef>Operation</th>
-    <td mat-cell *matCellDef="let element">
-      <button mat-raised-button color="warn" (click)="removeData(); delete(element.orderID)">Remove</button>
+    <td id="operation" mat-cell *matCellDef="let element">
+        <button mat-raised-button color="warn" (click)="removeData(); delete(element.orderID)">Remove</button>
+      &nbsp;
+      <button type="button" class="btn btn-warning" (click)="updateData()">Update</button>
     </td>
   </ng-container>
 

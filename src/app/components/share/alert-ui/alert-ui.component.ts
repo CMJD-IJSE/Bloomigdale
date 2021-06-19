@@ -54,6 +54,10 @@ export class AlertUIComponent implements OnInit {
       console.log(error);
     });
   }
+
+  // tslint:disable-next-line:typedef
+  updateData() {
+  }
 }
 
 /*export interface PeriodicElement {

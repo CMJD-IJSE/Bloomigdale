@@ -62,6 +62,7 @@ export class ItemDescriptionComponent implements OnInit {
     this.itemService.saveItem(item).subscribe(resp => {
       console.log(resp);
       if (resp.state === true) {
+        alert('saved');
         window.location.reload();
       }
     }, error => {
@@ -80,7 +81,7 @@ export class ItemDescriptionComponent implements OnInit {
 
   openDialog(): void {
     const dialogRef = this.dialog.open(AlertUIComponent, {
-      width: '70%',
+      width: '50%',
       height: '80%',
       data: this.itemArray
     });

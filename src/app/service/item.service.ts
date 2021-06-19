@@ -33,4 +33,16 @@ export class ItemService {
   public deleteItem(id: string): Observable<any>{
     return this.http.delete(this.baseUrl + 'deleteItem', {headers: {id}});
   }
+
+  public updateItem(c: ItemDTO): Observable<any>{
+    return this.http.put(this.baseUrl + 'updateItem', {
+      orderID: c.orderID,
+      itemID: c.itemID,
+      itemName: c.itemName,
+      itemSize: c.itemSize,
+      itemColor: c.itemColor,
+      itemQty: c.itemQty,
+      itemPrice: c.itemPrice,
+    });
+  }
 }

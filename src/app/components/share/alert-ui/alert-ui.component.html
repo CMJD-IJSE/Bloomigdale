@@ -5,16 +5,16 @@
     <form [formGroup]="updateForm" (ngSubmit)="update()">
       <mat-form-field appearance="fill">
         <mat-label>Size</mat-label>
-        <mat-select formControlName="itemSize">
-          <mat-option *ngFor="let size of sizes" [value]="itemSize">
+        <mat-select formControlName="itemSize" [(ngModel)]="itemSize">
+          <mat-option *ngFor="let size of sizes" [value]="size.value">
             {{size.viewValue}}
           </mat-option>
         </mat-select>
       </mat-form-field>
       <mat-form-field appearance="fill">
         <mat-label>Qty</mat-label>
-        <mat-select formControlName="itemQty">
-          <mat-option *ngFor="let quantity of quantities" [value]="itemQty">
+        <mat-select formControlName="itemQty" [(ngModel)]="itemQty">
+          <mat-option *ngFor="let quantity of quantities" [value]="quantity.value">
             {{quantity.viewValue}}
           </mat-option>
         </mat-select>
@@ -54,7 +54,7 @@
         <td id="operation" mat-cell *matCellDef="let element">
           <button mat-raised-button color="warn" (click)="removeData(); delete(element.orderID)">Remove</button>
           &nbsp;
-          <button type="button" class="btn btn-warning" (click)="drawer.toggle()">Update</button>
+          <button type="button" class="btn btn-warning" (click)="updateItem(element);drawer.toggle()">Update</button>
         </td>
       </ng-container>
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

@@ -103,7 +103,20 @@ export class AlertUIComponent implements OnInit {
 
   // tslint:disable-next-line:typedef
   update() {
-
+    const dto = new ItemDTO(
+      this.orderID,
+      this.itemID,
+      this.itemName,
+      this.itemSize,
+      this.itemColor,
+      this.itemQty,
+      this.itemPrice
+    );
+    this.itemService.updateItem(dto).subscribe(resp => {
+      alert(resp.message);
+    }, error => {
+      alert(error);
+    });
   }
 }
 

@@ -57,13 +57,7 @@ export class AlertUIComponent implements OnInit {
 
   // tslint:disable-next-line:typedef
   updateData() {
+    alert('Aure you sure?');
   }
-}
 
-/*export interface PeriodicElement {
-  itemID: string;
-  itemName: string;
-  itemSize: string;
-  itemQty: number;
-  itemPrice: number;
-}*/
+}

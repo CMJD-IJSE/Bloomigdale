@@ -23,6 +23,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { AlertUIComponent } from './components/share/alert-ui/alert-ui.component';
 import {MatTableModule} from '@angular/material/table';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatSidenavModule} from "@angular/material/sidenav";
 
 @NgModule({
   declarations: [
@@ -36,24 +37,25 @@ import {MatDialogModule} from '@angular/material/dialog';
     FooterComponent,
     AlertUIComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MatFormFieldModule,
-    MatIconModule,
-    MatFormFieldModule,
-    MatDividerModule,
-    MatInputModule,
-    CarouselModule,
-    MatButtonModule,
-    FormsModule,
-    MatSelectModule,
-    ReactiveFormsModule,
-    HttpClientModule,
-    MatTableModule,
-    MatDialogModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MatFormFieldModule,
+        MatIconModule,
+        MatFormFieldModule,
+        MatDividerModule,
+        MatInputModule,
+        CarouselModule,
+        MatButtonModule,
+        FormsModule,
+        MatSelectModule,
+        ReactiveFormsModule,
+        HttpClientModule,
+        MatTableModule,
+        MatDialogModule,
+        MatSidenavModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -6,3 +6,15 @@
 #operation{
   width: 250px;
 }
+
+.example-container {
+  width: 100%;
+  height: 100%;
+}
+
+mat-drawer-content {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}

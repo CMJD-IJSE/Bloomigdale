@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormControl, FormGroup} from '@angular/forms';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-item-description',
@@ -11,9 +11,9 @@ export class ItemDescriptionComponent implements OnInit {
   itemForm: FormGroup = new FormGroup({
     itemID: new FormControl('BIC001'),
     itemName: new FormControl('Sandro'),
-    itemSize: new FormControl(),
+    itemSize: new FormControl(null, Validators.required),
     itemColor: new FormControl('Navy Blue'),
-    itemQty: new FormControl(),
+    itemQty: new FormControl(null, Validators.required),
     itemPrice: new FormControl('127425.80')
   });
 

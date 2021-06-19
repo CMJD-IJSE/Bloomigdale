@@ -22,27 +22,33 @@
 
   <div class="description">
     <form>
-    <!--<p class="topic"><b>Sandro</b></p>
+    <p class="topic"><b>Sandro</b></p>
       <p id="id" class="topic">BIC001</p>
     <p class="content">Teddy Slim Fit Bomber Jacket</p>
     <p class="content price">LKR 127,425.80</p>
-    <p class="content color"><b>COLOR: </b> Navy Blue</p>-->
+    <p class="content color"><b>COLOR: </b> Navy Blue</p>
 
     <div class="forms">
-      <form>
+      <form  [formGroup]="itemForm">
+        <mat-form-field class="example-full-width" style="visibility: hidden; width: 2px">
+          <mat-label>Sandro</mat-label>
+          <input matInput formControlName="itemColor">
+        </mat-form-field>
+
+
         <mat-form-field appearance="outline" id="size-form">
           <mat-label>Size</mat-label>
-          <mat-select [(ngModel)]="selectedValue" name="food">
+          <mat-select formControlName="itemSize" name="food">
             <mat-option *ngFor="let size of sizes" [value]="size.value">
               {{size.viewValue}}
             </mat-option>
           </mat-select>
         </mat-form-field>
         </form>
-      <form>
+      <form [formGroup]="itemForm">
         <mat-form-field appearance="outline" id="qty-form">
           <mat-label>Quantity</mat-label>
-          <mat-select [(ngModel)]="selectedCar" name="car">
+          <mat-select formControlName="itemQty" name="car">
             <option value="" selected></option>
             <mat-option *ngFor="let quantity of quantities" [value]="quantity.value">
               {{quantity.viewValue}}
@@ -94,6 +100,7 @@
       <i class="fab fa-facebook fa-2x icon"></i>
       <i class="fab fa-twitter-square fa-2x icon"></i>
     </div>
+      </form>
   </div>
 </div>
 <div class="lines">

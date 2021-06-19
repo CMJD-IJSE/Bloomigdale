@@ -46,10 +46,15 @@
   font-size: 15px;
 }
 .topic{
+  font-weight: bold;
   font-size: 16px;
   letter-spacing: 2px;
 }
 
+#id{
+  font-size: 15px;
+  letter-spacing: 1px;
+}
 .content{
   padding-bottom: 20px;
   letter-spacing: 2px;
@@ -156,6 +161,11 @@
 
   #qty-form{
     width: 100px;
+  }
+
+  .example-full-width{
+    visibility: hidden;
+    width: 1px;
   }
 }
 

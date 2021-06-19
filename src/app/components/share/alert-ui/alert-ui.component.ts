@@ -114,6 +114,7 @@ export class AlertUIComponent implements OnInit {
     );
     this.itemService.updateItem(dto).subscribe(resp => {
       alert(resp.message);
+      window.location.reload();
     }, error => {
       alert(error);
     });

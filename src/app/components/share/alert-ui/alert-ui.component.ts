@@ -1,6 +1,7 @@
 import {Component, Inject, OnInit, ViewChild} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 import {itemData} from '../ItemData';
+import {ItemService} from '../../../service/item.service';
 
 @Component({
   selector: 'app-alert-ui',
@@ -10,6 +11,7 @@ import {itemData} from '../ItemData';
 export class AlertUIComponent implements OnInit {
 
   constructor(
+    private itemService: ItemService,
     public dialogRef: MatDialogRef<AlertUIComponent>,
     @Inject(MAT_DIALOG_DATA) public data: itemData[]) {}
 
@@ -22,4 +24,12 @@ export class AlertUIComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // tslint:disable-next-line:typedef
+  delete(id: string) {
+    this.itemService.deleteItem(id).subscribe(resp => {
+      alert(resp.message);
+    }, error => {
+      console.log(error);
+    });
+  }
 }

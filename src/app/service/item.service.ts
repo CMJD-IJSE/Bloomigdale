@@ -29,4 +29,7 @@ export class ItemService {
     return this.http.get(this.baseUrl + 'getAllItems');
   }
 
+  public deleteItem(id: string): Observable<any>{
+    return this.http.delete(this.baseUrl + 'deleteItem', {headers: {id}});
+  }
 }

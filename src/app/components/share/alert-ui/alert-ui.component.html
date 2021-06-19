@@ -21,7 +21,10 @@
     <td>{{tempItem.itemPrice}}</td>
     <td>{{tempItem.itemQty}}</td>
     <td>
-      <button mat-button color="warn">Remove</button>
+      <div class="button-table">
+        <button type="button" class="btn btn-danger" (click)="delete(tempItem.itemID)">Remove</button>
+        <button type="button" class="btn btn-warning">Update</button>
+      </div>
     </td>
   </tr>
   </tbody>

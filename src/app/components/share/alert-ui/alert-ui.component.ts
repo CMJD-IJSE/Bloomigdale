@@ -62,12 +62,6 @@ export class AlertUIComponent implements OnInit {
   ];
 
   // tslint:disable-next-line:typedef
-  /*addData() {
-    this.dataSource.push(this.itemArray[this.itemArray.length]);
-    this.table.renderRows();
-  }*/
-
-  // tslint:disable-next-line:typedef
   removeData() {
     this.dataSource.pop();
     this.table.renderRows();
@@ -85,6 +79,7 @@ export class AlertUIComponent implements OnInit {
   delete(id: string) {
     this.itemService.deleteItem(id).subscribe(resp => {
       alert(resp.message);
+      window.location.reload();
     }, error => {
       console.log(error);
     });

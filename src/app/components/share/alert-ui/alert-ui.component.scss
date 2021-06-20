@@ -20,5 +20,12 @@ mat-drawer-content {
 }
 
 mat-drawer{
-  width: 50%;
+  width: 25%;
+  padding-right: 5%;
+}
+
+.side-form{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }

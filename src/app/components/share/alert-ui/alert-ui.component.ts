@@ -61,6 +61,21 @@ export class AlertUIComponent implements OnInit {
     {value: '5', viewValue: '5'}
   ];
 
+  loginForm = new FormGroup({
+    userEmail: new FormControl('', [
+      Validators.required,
+      Validators.email,
+    ]),
+    userPassword: new FormControl('', [
+      Validators.required,
+      Validators.minLength(6),
+      Validators.maxLength(20)
+    ])
+  });
+
+  // tslint:disable-next-line:typedef
+  updateIt = false;
+
   // tslint:disable-next-line:typedef
   removeData() {
     this.dataSource.pop();
@@ -87,6 +102,7 @@ export class AlertUIComponent implements OnInit {
 
   // tslint:disable-next-line:typedef
   updateItem(tc: ItemDTO) {
+    this.updateIt = true;
     this.orderID = tc.orderID;
     this.itemID = tc.itemID;
     this.itemSize = tc.itemSize;
@@ -113,6 +129,10 @@ export class AlertUIComponent implements OnInit {
     }, error => {
       alert(error);
     });
+  }
+  // tslint:disable-next-line:typedef
+  login(){
+    console.log(this.loginForm.get('userEmail'));
   }
 }
 

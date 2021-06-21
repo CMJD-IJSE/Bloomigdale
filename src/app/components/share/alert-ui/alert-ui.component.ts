@@ -75,6 +75,7 @@ export class AlertUIComponent implements OnInit {
 
   // tslint:disable-next-line:typedef
   updateIt = false;
+  loginUI = false;
 
   // tslint:disable-next-line:typedef
   removeData() {
@@ -133,6 +134,12 @@ export class AlertUIComponent implements OnInit {
   // tslint:disable-next-line:typedef
   login(){
     console.log(this.loginForm.get('userEmail'));
+  }
+
+  // tslint:disable-next-line:typedef
+  loginFormVisibility() {
+    this.updateIt = false;
+    this.loginUI = true;
   }
 }
 

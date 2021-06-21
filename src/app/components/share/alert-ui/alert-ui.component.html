@@ -21,7 +21,7 @@
       </mat-form-field>
       <button mat-flat-button color="accent" type="submit">Update</button>
     </form></div>
-    <div class="main-wrap">
+    <div class="main-wrap" *ngIf="loginUI == true">
       <div class="form-outer">
         <form [formGroup]="loginForm" (ngSubmit)="login()">
           <div class="mb-3">
@@ -79,6 +79,6 @@
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
-    <div class="checkout-wrap"><button mat-raised-button color="primary" class="btn-checkout">CHECKOUT</button></div>
+    <div class="checkout-wrap"><button mat-raised-button color="primary" class="btn-checkout" (click)="loginFormVisibility(); drawer.toggle()">CHECKOUT</button></div>
   </mat-drawer-content>
 </mat-drawer-container>

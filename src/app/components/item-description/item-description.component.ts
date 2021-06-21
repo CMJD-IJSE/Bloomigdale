@@ -5,6 +5,7 @@ import {ItemService} from '../../service/item.service';
 import {MatDialog} from '@angular/material/dialog';
 import {AlertUIComponent} from '../share/alert-ui/alert-ui.component';
 import {itemData} from '../share/ItemData';
+import {LoginFormComponent} from "../share/login-form/login-form.component";
 
 @Component({
   selector: 'app-item-description',
@@ -87,6 +88,15 @@ export class ItemDescriptionComponent implements OnInit {
     });
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
+    });
+  }
+
+  // tslint:disable-next-line:typedef
+  openCheckOutDialog() {
+    this.dialog.open(LoginFormComponent, {
+      data: {
+        animal: 'panda'
+      }
     });
   }
 }

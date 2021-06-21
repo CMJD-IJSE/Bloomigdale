@@ -65,13 +65,13 @@
   padding-top: 50px;
 }
 
-.add-button{
+.button{
   background-color: black;
   height: 45px;
   width: 100%;
   font-weight: bold;
   letter-spacing: 2px;
-  margin-bottom: 55px;
+  margin-bottom: 20px;
 }
 
 .desc{
@@ -177,4 +177,11 @@
 
   }
 
+}
+
+.checkout-button{
+  margin-bottom: 55px;
+  font-weight: bold;
+  letter-spacing: 3px;
+  background-color: #2c3e50;
 }

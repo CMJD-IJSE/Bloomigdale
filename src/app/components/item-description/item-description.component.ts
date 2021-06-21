@@ -6,6 +6,7 @@ import {MatDialog} from '@angular/material/dialog';
 import {AlertUIComponent} from '../share/alert-ui/alert-ui.component';
 import {itemData} from '../share/ItemData';
 import {LoginFormComponent} from "../share/login-form/login-form.component";
+import {UserService} from "../../service/user.service";
 
 @Component({
   selector: 'app-item-description',
@@ -41,7 +42,7 @@ export class ItemDescriptionComponent implements OnInit {
   ];
   itemDataArray: itemData[] = [];
 
-  constructor(private itemService: ItemService, public dialog: MatDialog) {
+  constructor(private itemService: ItemService, public dialog: MatDialog, private userService: UserService) {
   }
 
   ngOnInit(): void {

@@ -26,7 +26,7 @@ export class LoginFormComponent implements OnInit {
   }
 
   // tslint:disable-next-line:typedef
-  login() {
+  login(loginForm) {
 
   }
 }

@@ -60,3 +60,18 @@ mat-drawer{
 .btn-login{
   width: 100%;
 }
+
+.checkout-wrap{
+  padding: 10px 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.btn-checkout{
+  width: 40%;
+  height: 50px;
+  background-color: black;
+  letter-spacing: 2px;
+  font-weight: bold;
+}

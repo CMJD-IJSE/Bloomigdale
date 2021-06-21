@@ -1,0 +1,19 @@
+<div class="main-wrap">
+  <div class="form-outer">
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+      <div class="mb-3">
+        <label for="EmailAddress" class="form-label">Email address</label>
+        <input formControlName="userEmail"  type="email" class="form-control" id="EmailAddress" placeholder="name@example.com">
+
+        <p *ngIf="loginForm.get('userEmail')?.touched && loginForm.get('userEmail')?.invalid" class="alert alert-danger"style="margin-top: 4px">E-mail is required</p>
+      </div>
+
+      <div class="mb-3">
+        <label for="Password" class="form-label">Password</label>
+        <input formControlName="userPassword" type="password" class="form-control" id="Password" placeholder="">
+        <p *ngIf="loginForm.get('userPassword')?.touched && loginForm.get('userPassword')?.invalid" class="alert alert-danger" style="margin-top: 4px">Password is required</p>
+      </div>
+      <button [disabled]="loginForm.invalid" type="submit" class="btn btn-primary btn-login">Login</button>
+    </form>
+  </div>
+</div>

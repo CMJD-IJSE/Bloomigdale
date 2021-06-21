@@ -24,6 +24,7 @@ import { AlertUIComponent } from './components/share/alert-ui/alert-ui.component
 import {MatTableModule} from '@angular/material/table';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatSidenavModule} from "@angular/material/sidenav";
+import { LoginFormComponent } from './components/share/login-form/login-form.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import {MatSidenavModule} from "@angular/material/sidenav";
     HomePageComponent,
     HeaderComponent,
     FooterComponent,
-    AlertUIComponent
+    AlertUIComponent,
+    LoginFormComponent
   ],
     imports: [
         BrowserModule,

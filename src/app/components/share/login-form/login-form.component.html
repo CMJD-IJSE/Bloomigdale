@@ -15,7 +15,8 @@
         <input formControlName="userPassword" type="password" class="form-control" id="Password" placeholder="">
         <p *ngIf="loginForm.get('userPassword')?.touched && loginForm.get('userPassword')?.invalid" class="alert alert-danger" style="margin-top: 4px">Password is required</p>
       </div>
-      <button [disabled]="loginForm.invalid" type="submit" class="btn btn-primary btn-login">Login</button>
+      <button [disabled]="loginForm.invalid" type="button" class="btn btn-primary btn-login">Login</button>
+      <button [disabled]="loginForm.invalid" type="submit" class="btn btn-primary btn-signup" (click)="login()">Sign Up</button>
     </form>
   </div>
 </div>

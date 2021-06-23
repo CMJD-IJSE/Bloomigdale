@@ -38,4 +38,9 @@ export class LoginFormComponent implements OnInit {
     // @ts-ignore
     this.userService.saveUser(user);
   }
+
+  // tslint:disable-next-line:typedef
+  login() {
+
+  }
 }

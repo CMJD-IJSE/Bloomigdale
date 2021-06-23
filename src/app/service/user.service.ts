@@ -27,7 +27,12 @@ export class UserService {
         userPassword
       })
     }).then((res) => res.json());
-    console.log(result);
+
+    if (result.status === 'ok'){
+
+    }else{
+      alert(result.error);
+    }
     /*return this.http.post(this.loginUrl + 'saveUser', JSON.stringify({
       userEmail: u.userEmail,
       userPassword: u.userPassword

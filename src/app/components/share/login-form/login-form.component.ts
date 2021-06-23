@@ -35,6 +35,7 @@ export class LoginFormComponent implements OnInit {
       this.loginForm.get('userPassword')?.value
     );
 
+    // @ts-ignore
     this.userService.saveUser(user);
   }
 }

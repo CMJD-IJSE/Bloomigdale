@@ -13,10 +13,24 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
-  public async saveUser(u: UserDTO): Promise<Observable<any>> {
-    return this.http.post(this.loginUrl + 'saveUser', JSON.stringify({
+  // tslint:disable-next-line:typedef
+  public async saveUser(u: UserDTO) {
+    const userEmail = u.userEmail;
+    const userPassword = u.userPassword;
+    const result = await fetch(this.loginUrl + 'saveUser', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        userEmail,
+        userPassword
+      })
+    }).then((res) => res.json());
+    console.log(result);
+    /*return this.http.post(this.loginUrl + 'saveUser', JSON.stringify({
       userEmail: u.userEmail,
       userPassword: u.userPassword
-    }), {headers: {type: 'application/json'}});
+    }), {headers: {type: 'application/json'}});*/
   }
 }

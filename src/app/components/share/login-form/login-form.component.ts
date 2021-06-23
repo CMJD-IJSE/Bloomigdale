@@ -41,6 +41,11 @@ export class LoginFormComponent implements OnInit {
 
   // tslint:disable-next-line:typedef
   login() {
+    const user = new UserDTO(
+      this.loginForm.get('userEmail')?.value,
+      this.loginForm.get('userPassword')?.value
+    );
 
+    this.userService.login(user);
   }
 }

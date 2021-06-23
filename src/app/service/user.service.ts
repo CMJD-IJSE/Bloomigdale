@@ -29,13 +29,32 @@ export class UserService {
     }).then((res) => res.json());
 
     if (result.status === 'ok'){
+      alert('success');
+    }else{
+      alert(result.error);
+    }
+  }
+
+  // tslint:disable-next-line:typedef
+  public async login(u: UserDTO){
+    const userEmail = u.userEmail;
+    const userPassword = u.userPassword;
+    const result = await fetch(this.loginUrl + 'login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        userEmail,
+        userPassword
+      })
+    }).then((res) => res.json());
+
+    if (result.status === 'ok'){
+      console.log('Got the token: ', result.data);
 
     }else{
       alert(result.error);
     }
-    /*return this.http.post(this.loginUrl + 'saveUser', JSON.stringify({
-      userEmail: u.userEmail,
-      userPassword: u.userPassword
-    }), {headers: {type: 'application/json'}});*/
   }
 }

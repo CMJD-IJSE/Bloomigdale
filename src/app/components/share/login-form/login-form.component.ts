@@ -10,6 +10,9 @@ import {UserService} from '../../../service/user.service';
 })
 export class LoginFormComponent implements OnInit {
 
+  constructor(private userService: UserService) {
+  }
+
   loginForm = new FormGroup({
     userEmail: new FormControl('', [
       Validators.required,
@@ -22,8 +25,15 @@ export class LoginFormComponent implements OnInit {
     ])
   });
 
-  constructor(private userService: UserService) {
-  }
+  pressed = true;
+
+  changePasswordForm = new FormGroup({
+    userPassword: new FormControl('', [
+      Validators.required,
+      Validators.minLength(6),
+      Validators.maxLength(20)
+    ])
+  });
 
   ngOnInit(): void {
   }
@@ -38,14 +48,19 @@ export class LoginFormComponent implements OnInit {
     // @ts-ignore
     this.userService.saveUser(user);
   }
-
   // tslint:disable-next-line:typedef
   login() {
+    this.pressed = false;
     const user = new UserDTO(
       this.loginForm.get('userEmail')?.value,
       this.loginForm.get('userPassword')?.value
     );
 
     this.userService.login(user);
+  }
+
+  // tslint:disable-next-line:typedef
+  changePassword() {
+
   }
 }

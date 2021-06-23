@@ -4,9 +4,7 @@ import ItemDTO from '../../dto/ItemDTO';
 import {ItemService} from '../../service/item.service';
 import {MatDialog} from '@angular/material/dialog';
 import {AlertUIComponent} from '../share/alert-ui/alert-ui.component';
-import {itemData} from '../share/ItemData';
-import {LoginFormComponent} from "../share/login-form/login-form.component";
-import {UserService} from "../../service/user.service";
+import {LoginFormComponent} from '../share/login-form/login-form.component';
 
 @Component({
   selector: 'app-item-description',
@@ -40,7 +38,6 @@ export class ItemDescriptionComponent implements OnInit {
     {value: '4', viewValue: '4'},
     {value: '5', viewValue: '5'}
   ];
-  itemDataArray: itemData[] = [];
 
   constructor(private itemService: ItemService, public dialog: MatDialog) {
   }

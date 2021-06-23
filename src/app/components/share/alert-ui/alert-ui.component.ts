@@ -1,8 +1,6 @@
 import {Component, Inject, OnInit, ViewChild} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
-import {itemData} from '../ItemData';
 import {ItemService} from '../../../service/item.service';
-import {MatButton} from '@angular/material/button';
 import {MatTable} from '@angular/material/table';
 import ItemDTO from '../../../dto/ItemDTO';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
@@ -14,19 +12,11 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 })
 export class AlertUIComponent implements OnInit {
 
-  constructor(
-    private itemService: ItemService,
-    public dialogRef: MatDialogRef<AlertUIComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: ItemDTO[]) {}
   displayedColumns: string[] = ['Item ID', 'Name', 'Size', 'Qty', 'Price', 'Operation'];
-
-
   // @ts-ignore
   @ViewChild(MatTable) table: MatTable<ItemDTO>;
-
   itemArray: ItemDTO[] = this.data;
   dataSource = this.itemArray;
-
   orderID = '';
   itemID = '';
   itemName = '';
@@ -34,7 +24,6 @@ export class AlertUIComponent implements OnInit {
   itemSize = '';
   itemQty = 0;
   itemPrice = 0;
-
   updateForm: FormGroup = new FormGroup({
     orderID: new FormControl(this.orderID),
     itemID: new FormControl(this.itemID),
@@ -44,7 +33,6 @@ export class AlertUIComponent implements OnInit {
     itemQty: new FormControl(this.itemQty, Validators.required),
     itemPrice: new FormControl(this.itemPrice)
   });
-
   sizes: Sizes[] = [
     {value: 'X-Small', viewValue: 'XS'},
     {value: 'Small', viewValue: 'S'},
@@ -63,6 +51,12 @@ export class AlertUIComponent implements OnInit {
   // tslint:disable-next-line:typedef
   updateIt = false;
   loginUI = false;
+
+  constructor(
+    private itemService: ItemService,
+    public dialogRef: MatDialogRef<AlertUIComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: ItemDTO[]) {
+  }
 
   // tslint:disable-next-line:typedef
   removeData() {
@@ -119,6 +113,7 @@ export class AlertUIComponent implements OnInit {
       alert(error);
     });
   }
+
   // tslint:disable-next-line:typedef
 
   // tslint:disable-next-line:typedef

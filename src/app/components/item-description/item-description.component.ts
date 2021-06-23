@@ -42,7 +42,7 @@ export class ItemDescriptionComponent implements OnInit {
   ];
   itemDataArray: itemData[] = [];
 
-  constructor(private itemService: ItemService, public dialog: MatDialog, private userService: UserService) {
+  constructor(private itemService: ItemService, public dialog: MatDialog) {
   }
 
   ngOnInit(): void {

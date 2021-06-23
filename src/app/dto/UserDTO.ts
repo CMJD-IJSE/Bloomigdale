@@ -1,4 +1,4 @@
-export default class ItemDTO {
+export default class UserDTO {
 private _userEmail: string;
 private _userPassword: string;
 

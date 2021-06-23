@@ -5,7 +5,8 @@
 
 export const environment = {
   production: false,
-  baseUrl: 'http://localhost:3000/api/v1/itemRoute/'
+  baseUrl: 'http://localhost:3000/api/v1/itemRoute/',
+  loginUrl: 'http://localhost:9999/api/v1/userRoute/'
 };
 
 /*

@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
+import UserDTO from '../../../dto/UserDTO';
+import {UserService} from '../../../service/user.service';
 
 @Component({
   selector: 'app-login-form',
@@ -8,12 +10,10 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 })
 export class LoginFormComponent implements OnInit {
 
-  constructor() { }
-
   loginForm = new FormGroup({
     userEmail: new FormControl('', [
       Validators.required,
-      Validators.email,
+      Validators.email
     ]),
     userPassword: new FormControl('', [
       Validators.required,
@@ -22,11 +22,19 @@ export class LoginFormComponent implements OnInit {
     ])
   });
 
+  constructor(private userService: UserService) {
+  }
+
   ngOnInit(): void {
   }
 
   // tslint:disable-next-line:typedef
-  login(loginForm) {
+  saveUser() {
+    const user = new UserDTO(
+      this.loginForm.get('userEmail')?.value,
+      this.loginForm.get('userPassword')?.value
+    );
 
+    this.userService.saveUser(user);
   }
 }

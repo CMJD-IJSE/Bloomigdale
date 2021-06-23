@@ -2,7 +2,7 @@
 
 <div class="main-wrap">
   <div class="form-outer">
-    <form [formGroup]="loginForm" (ngSubmit)="login()">
+    <form [formGroup]="loginForm" (ngSubmit)="saveUser()">
       <div class="mb-3">
         <label for="EmailAddress" class="form-label">Email address</label>
         <input formControlName="userEmail"  type="email" class="form-control" id="EmailAddress" placeholder="name@example.com">

@@ -51,7 +51,28 @@ export class UserService {
     }).then((res) => res.json());
 
     if (result.status === 'ok'){
-      console.log('Got the token: ', result.data);
+      localStorage.setItem('token', result.data);
+      alert('Success');
+    }else{
+      alert(result.error);
+    }
+  }
+
+  // tslint:disable-next-line:typedef
+  public async changePassword(password: string){
+    const result = await fetch(this.loginUrl + 'changePassword', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        newPassword: password,
+        token: localStorage.getItem('token')
+      })
+    }).then((res) => res.json());
+
+    if (result.status === 'ok'){
+      alert('Success');
 
     }else{
       alert(result.error);

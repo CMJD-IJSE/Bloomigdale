@@ -61,6 +61,6 @@ export class LoginFormComponent implements OnInit {
 
   // tslint:disable-next-line:typedef
   changePassword() {
-
+    this.userService.changePassword(this.changePasswordForm.get('userPassword')?.value);
   }
 }

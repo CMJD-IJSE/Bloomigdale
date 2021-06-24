@@ -13,6 +13,9 @@ import {LoginFormComponent} from '../share/login-form/login-form.component';
 })
 export class ItemDescriptionComponent implements OnInit {
 
+  constructor(private itemService: ItemService, public dialog: MatDialog) {
+  }
+
   itemForm: FormGroup = new FormGroup({
     orderID: new FormControl(Math.random().toString(36).substr(2, 9)),
     itemID: new FormControl('BIC001'),
@@ -39,8 +42,8 @@ export class ItemDescriptionComponent implements OnInit {
     {value: '5', viewValue: '5'}
   ];
 
-  constructor(private itemService: ItemService, public dialog: MatDialog) {
-  }
+  // tslint:disable-next-line:typedef
+  src: any = 'https://images.bloomingdalesassets.com/is/image/BLM/products/1/optimized/10873071_fpx.tif?op_sharpen=1&wid=700&fit=fit,1&$filtersm$&fmt=webp';
 
   ngOnInit(): void {
     this.loadAllItems();
@@ -96,6 +99,26 @@ export class ItemDescriptionComponent implements OnInit {
         animal: 'panda'
       }
     });
+  }
+  // tslint:disable-next-line:typedef
+  loadImage1() {
+    this.src = 'https://images.bloomingdalesassets.com/is/image/BLM/products/1/optimized/10873071_fpx.tif?op_sharpen=1&wid=700&fit=fit,1&$filtersm$&fmt=webp';
+
+  }
+
+  // tslint:disable-next-line:typedef
+  loadImage2() {
+    this.src = 'https://images.bloomingdalesassets.com/is/image/BLM/products/5/optimized/10873075_fpx.tif?op_sharpen=1&wid=700&fit=fit,1&$filtersm$&fmt=webp';
+  }
+
+  // tslint:disable-next-line:typedef
+  loadImage3() {
+    this.src = 'https://images.bloomingdalesassets.com/is/image/BLM/products/4/optimized/11039624_fpx.tif?op_sharpen=1&wid=700&fit=fit,1&$filtersm$&fmt=webp';
+  }
+
+  // tslint:disable-next-line:typedef
+  loadImage4() {
+    this.src = 'https://images.bloomingdalesassets.com/is/image/BLM/products/8/optimized/11039628_fpx.tif?op_sharpen=1&wid=700&fit=fit,1&$filtersm$&fmt=webp';
   }
 }
 

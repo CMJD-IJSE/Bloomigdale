@@ -18,7 +18,7 @@
       <form [formGroup]="changePasswordForm" *ngIf="!pressed">
         <div class="mb-3">
           <label for="Password" class="form-label">New Password</label>
-          <input formControlName="userPassword" type="password" class="form-control" id="New Password" placeholder="">
+          <input formControlName="userPassword" type="password" class="form-control" id="New Password" placeholder="Want to change?">
           <p *ngIf="changePasswordForm.get('userPassword')?.touched && loginForm.get('userPassword')?.invalid" class="alert alert-danger" style="margin-top: 4px">Password is required</p>
         </div>
       </form>

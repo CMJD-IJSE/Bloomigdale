@@ -25,3 +25,10 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## About App
+
+This is a simple angular application to practice it.  
+The backend of this application you can find from this.
+[backend](https://github.com/CMJD-IJSE/Bloomigdale-backend.git)  
+The description page is implemented only to first item/element (SANDRO) of **RECOMMENDED FOR YOU** carousel.

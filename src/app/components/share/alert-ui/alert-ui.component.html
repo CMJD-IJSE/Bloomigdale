@@ -24,7 +24,7 @@
     <app-login-form *ngIf="loginUI==true"></app-login-form>
   </mat-drawer>
   <mat-drawer-content>
-    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z0 demo-table">
       <ng-container matColumnDef="Item ID">
         <th mat-header-cell *matHeaderCellDef>Item ID</th>
         <td mat-cell *matCellDef="let element">{{element.itemID}}</td>

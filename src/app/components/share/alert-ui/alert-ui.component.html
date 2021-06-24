@@ -53,9 +53,8 @@
       <ng-container matColumnDef="Operation">
         <th mat-header-cell *matHeaderCellDef>Operation</th>
         <td id="operation" mat-cell *matCellDef="let element">
-          <button mat-raised-button color="warn" (click)="removeData(); delete(element.orderID)">Remove</button>
-          &nbsp;
-          <button type="button" class="btn btn-success" (click)="updateItem(element);drawer.toggle()">Update</button>
+          &nbsp;<button type="button" class="btn btn-danger btn-sm" (click)="removeData(); delete(element.orderID)">Remove</button>
+          <button type="button" class="btn btn-success btn-sm" (click)="updateItem(element);drawer.toggle()">Update</button>
         </td>
       </ng-container>
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

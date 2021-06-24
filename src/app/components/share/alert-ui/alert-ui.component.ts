@@ -69,7 +69,6 @@ export class AlertUIComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(this.data);
   }
 
   // tslint:disable-next-line:typedef

@@ -15,16 +15,16 @@
         <input formControlName="userPassword" type="password" class="form-control" id="Password" placeholder="">
         <p *ngIf="loginForm.get('userPassword')?.touched && loginForm.get('userPassword')?.invalid" class="alert alert-danger" style="margin-top: 4px">Password is required</p>
       </div>
-      <form [formGroup]="changePasswordForm" *ngIf="!pressed">
+      <!--<form [formGroup]="changePasswordForm" *ngIf="!pressed">
         <div class="mb-3">
           <label for="Password" class="form-label">New Password</label>
           <input formControlName="userPassword" type="password" class="form-control" id="New Password" placeholder="Want to change?">
           <p *ngIf="changePasswordForm.get('userPassword')?.touched && loginForm.get('userPassword')?.invalid" class="alert alert-danger" style="margin-top: 4px">Password is required</p>
         </div>
-      </form>
+      </form>-->
       <button [disabled]="loginForm.invalid" *ngIf="pressed" type="button" class="btn btn-primary btn-login" (click)="login()">Login</button>
       <button [disabled]="loginForm.invalid" *ngIf="pressed" type="submit" class="btn btn-primary btn-signup">Sign Up</button>
-      <button [disabled]="changePasswordForm.invalid" *ngIf="!pressed" type="button" class="btn btn-primary btn-signup" (click)="changePassword()">Change Password</button>
+      <!--<button [disabled]="changePasswordForm.invalid" *ngIf="!pressed" type="button" class="btn btn-primary btn-signup" (click)="changePassword()">Change Password</button>-->
     </form>
   </div>
 </div>

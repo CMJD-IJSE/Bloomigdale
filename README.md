@@ -28,7 +28,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## About App
 
-This is a simple angular application to practice it.  
+This is a simple angular application to practice angular.  
 The backend of this application you can find from this.
 [backend](https://github.com/CMJD-IJSE/Bloomigdale-backend.git)  
 The description page is implemented only to first item/element (SANDRO) of **RECOMMENDED FOR YOU** carousel.

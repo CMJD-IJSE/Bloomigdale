@@ -2,8 +2,6 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {environment} from '../../environments/environment';
 import UserDTO from '../dto/UserDTO';
-import {ItemService} from './item.service';
-import {ItemDescriptionComponent} from '../components/item-description/item-description.component';
 
 @Injectable({
   providedIn: 'root'
@@ -35,11 +33,12 @@ export class UserService {
       window.location.reload();
     } else {
       alert(result.error);
+      window.location.reload(); // Todo: added no change password
     }
   }
 
   // tslint:disable-next-line:typedef
-  public async login(u: UserDTO){
+  public async login(u: UserDTO) {
     const userEmail = u.userEmail;
     const userPassword = u.userPassword;
     const result = await fetch(this.loginUrl + 'login', {
@@ -56,6 +55,8 @@ export class UserService {
     if (result.status === 'ok') {
       localStorage.setItem('token', result.data);
       alert('Success');
+      window.location.reload(); // Todo: added no change password
+
     } else {
       alert(result.error);
       window.location.reload();
@@ -63,7 +64,7 @@ export class UserService {
   }
 
   // tslint:disable-next-line:typedef
-  public async changePassword(password: string) {
+  /*public async changePassword(password: string) {
     const result = await fetch(this.loginUrl + 'changePassword', {
       method: 'POST',
       headers: {
@@ -82,5 +83,5 @@ export class UserService {
     } else {
       alert(result.error);
     }
-  }
+  }*/
 }

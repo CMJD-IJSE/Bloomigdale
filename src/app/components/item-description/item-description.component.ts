@@ -5,6 +5,9 @@ import {ItemService} from '../../service/item.service';
 import {MatDialog} from '@angular/material/dialog';
 import {AlertUIComponent} from '../share/alert-ui/alert-ui.component';
 import {LoginFormComponent} from '../share/login-form/login-form.component';
+import {createCssSelector} from '@angular/compiler/src/render3/view/template';
+import {style} from '@angular/animations';
+import {element} from 'protractor';
 
 @Component({
   selector: 'app-item-description',
@@ -95,30 +98,42 @@ export class ItemDescriptionComponent implements OnInit {
   // tslint:disable-next-line:typedef
   openCheckOutDialog() {
     this.dialog.open(LoginFormComponent, {
-      data: {
-        animal: 'panda'
-      }
     });
   }
   // tslint:disable-next-line:typedef
   loadImage1() {
     this.src = 'https://images.bloomingdalesassets.com/is/image/BLM/products/1/optimized/10873071_fpx.tif?op_sharpen=1&wid=700&fit=fit,1&$filtersm$&fmt=webp';
-
+    this.images('image1', ['image2', 'image3', 'image4']);
   }
 
   // tslint:disable-next-line:typedef
   loadImage2() {
     this.src = 'https://images.bloomingdalesassets.com/is/image/BLM/products/5/optimized/10873075_fpx.tif?op_sharpen=1&wid=700&fit=fit,1&$filtersm$&fmt=webp';
+    this.images('image2', ['image1', 'image3', 'image4']);
   }
 
   // tslint:disable-next-line:typedef
   loadImage3() {
     this.src = 'https://images.bloomingdalesassets.com/is/image/BLM/products/4/optimized/11039624_fpx.tif?op_sharpen=1&wid=700&fit=fit,1&$filtersm$&fmt=webp';
+    this.images('image3', ['image2', 'image1', 'image4']);
   }
 
   // tslint:disable-next-line:typedef
   loadImage4() {
     this.src = 'https://images.bloomingdalesassets.com/is/image/BLM/products/8/optimized/11039628_fpx.tif?op_sharpen=1&wid=700&fit=fit,1&$filtersm$&fmt=webp';
+    this.images('image4', ['image2', 'image3', 'image1']);
+  }
+
+  // tslint:disable-next-line:typedef
+  private images(currentImage: string, rests: string[] ){
+    // @ts-ignore
+    document.getElementById(currentImage).setAttribute('style', 'border-left: 2px solid black');
+    // @ts-ignore
+    document.getElementById(rests[0]).setAttribute('style', 'border-left: none');
+    // @ts-ignore
+    document.getElementById(rests[1]).setAttribute('style', 'border-left: none');
+    // @ts-ignore
+    document.getElementById(rests[2]).setAttribute('style', 'border-left: none');
   }
 }
 
